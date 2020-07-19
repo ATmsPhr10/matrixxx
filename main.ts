@@ -8,14 +8,14 @@ basic.forever(function () {
         while (y < 4) {
             y += 1
             led.plot(x, y)
-            basic.pause(500)
+            basic.pause(100)
         }
         y = -1
         while (y < 4) {
             y += 1
-            led.setBrightness(led.brightness() - 30)
+            led.setBrightness(led.brightness() - 50)
             led.unplot(x, y)
-            basic.pause(500)
+            basic.pause(100)
         }
     } else if (random == 1) {
         x = 1
@@ -36,14 +36,14 @@ basic.forever(function () {
         while (y < 4) {
             y += 1
             led.plot(x, y)
-            basic.pause(500)
+            basic.pause(100)
         }
         y = -1
         while (y < 4) {
             y += 1
             led.setBrightness(led.brightness() - 30)
             led.unplot(x, y)
-            basic.pause(500)
+            basic.pause(200)
         }
     } else if (random == 3) {
         x = 3
@@ -69,9 +69,9 @@ basic.forever(function () {
         y = -1
         while (y < 4) {
             y += 1
-            led.unplot(x, y)
-            basic.pause(100)
             led.setBrightness(led.brightness() - 50)
+            led.unplot(x, y)
+            basic.pause(200)
         }
     }
     y = -1
