@@ -1,79 +1,16 @@
 let x = 0
-let random = 0
-let y = -1
+let y = 0
 basic.forever(function () {
-    random = randint(0, 4)
-    if (random == 0) {
-        x = 0
-        while (y < 4) {
+    x = randint(0, 4)
+    y = randint(0, 4)
+    while (y < 8) {
+        for (let index = 0; index <= 3; index++) {
+            led.plotBrightness(x, y, 255)
+            led.plotBrightness(x, y - 1, 150)
+            led.plotBrightness(x, y - 2, 50)
+            led.plotBrightness(x, y - 3, 0)
             y += 1
-            led.plot(x, y)
-            basic.pause(100)
-        }
-        y = -1
-        while (y < 4) {
-            y += 1
-            led.setBrightness(led.brightness() - 50)
-            led.unplot(x, y)
-            basic.pause(100)
-        }
-    } else if (random == 1) {
-        x = 1
-        while (y < 4) {
-            y += 1
-            led.plot(x, y)
-            basic.pause(200)
-        }
-        y = -1
-        while (y < 4) {
-            y += 1
-            led.setBrightness(led.brightness() - 40)
-            led.unplot(x, y)
-            basic.pause(200)
-        }
-    } else if (random == 2) {
-        x = 2
-        while (y < 4) {
-            y += 1
-            led.plot(x, y)
-            basic.pause(100)
-        }
-        y = -1
-        while (y < 4) {
-            y += 1
-            led.setBrightness(led.brightness() - 30)
-            led.unplot(x, y)
-            basic.pause(200)
-        }
-    } else if (random == 3) {
-        x = 3
-        while (y < 4) {
-            y += 1
-            led.plot(x, y)
-            basic.pause(200)
-        }
-        y = -1
-        while (y < 4) {
-            y += 1
-            led.setBrightness(led.brightness() - 40)
-            led.unplot(x, y)
-            basic.pause(200)
-        }
-    } else if (random == 4) {
-        x = 4
-        while (y < 4) {
-            y += 1
-            led.plot(x, y)
-            basic.pause(100)
-        }
-        y = -1
-        while (y < 4) {
-            y += 1
-            led.setBrightness(led.brightness() - 50)
-            led.unplot(x, y)
             basic.pause(200)
         }
     }
-    y = -1
-    led.setBrightness(255)
 })
